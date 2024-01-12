@@ -128,3 +128,5 @@ MEDIA_ROOT  = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = 'media/'
 
 AUTH_USER_MODEL = 'janken_app.CustomUser'
+
+LOGIN_URL = '/janken_app/login/'
