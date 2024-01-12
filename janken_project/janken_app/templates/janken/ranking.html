@@ -1,0 +1,30 @@
+
+{% extends 'janken/base.html' %}
+
+{% block title %}Ranking{% endblock %}
+
+{% block header %}
+<h1 class="header-string">Ranking</h1>
+{% endblock %}
+
+{% block content %}
+<table class="table-list">
+    <thead>
+        <tr>
+            <th>Use name</th><th>image</th></th><th>Win rate</th><th>Total played</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for user in users %}
+        <tr>
+            <td><a href="{% url 'user' user.id %}">{{user.username}}</a></td>
+            <td><img src="{{user.image.url}}" class="image-ranking"></td>
+            <td>{{user.win_rate|floatformat}}%</td>
+            <td>{{user.play_num}} times</td>
+        </tr>
+    {% empty %}
+        <tr><td>There is no players...🥹</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
