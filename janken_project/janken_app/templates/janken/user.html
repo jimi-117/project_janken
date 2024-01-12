@@ -1,8 +1,4 @@
-<!-- Essentially, the content displayed is the same as in index.html. 
-However, while index.html is a template designed to display information about the user who is currently logged in, 
-user.html aims to display information about other users, resulting in slight differences in the text displayed. -->
-
-{% extends 'janken/base.html' %}
+{% extends 'base.html' %}
 
 {% block title %}User Info{% endblock %}
 
@@ -40,3 +36,7 @@ user.html aims to display information about other users, resulting in slight dif
 </div>
 
 {% endblock %}
+
+<!-- Essentially, the content displayed is the same as in index.html. 
+However, while index.html is a template designed to display information about the user who is currently logged in, 
+user.html aims to display information about other users, resulting in slight differences in the text displayed. -->

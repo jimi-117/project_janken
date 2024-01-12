@@ -1,7 +1,3 @@
-<!-- When inheriting from this base.html, it is necessary to define three blocks: 
-    the title block, the header block, and the content block. 
-    Conversely, this means that any parts other than these three blocks will be automatically created by inheriting from base.html. -->
-    
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -38,3 +34,8 @@
     <div class="content">{% block content %}{% endblock %}</div>
 </body>
 </html>
+
+<!-- When inheriting from this base.html, it is necessary to define three blocks: 
+    the title block, the header block, and the content block. 
+    Conversely, this means that any parts other than these three blocks will be automatically created by inheriting from base.html. -->
+    
