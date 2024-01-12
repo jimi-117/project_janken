@@ -1,0 +1,40 @@
+<!-- When inheriting from this base.html, it is necessary to define three blocks: 
+    the title block, the header block, and the content block. 
+    Conversely, this means that any parts other than these three blocks will be automatically created by inheriting from base.html. -->
+    
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'janken/css/janken.css' %}" >
+</head>
+
+<body class="container">
+    <nav class="nav_bar">
+        <ul>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">H🏠ME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'janken' %}">Game</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'ranking' %}">Ranking</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+            <li class="nav-item">
+                <span>Welcome, <span class="username-text">
+                    {{ user.username }}
+                </span> !</span>
+            </li>
+        </ul>
+    </nav>
+    <div class="header">{% block header %}{% endblock %}</div>
+    <div class="content">{% block content %}{% endblock %}</div>
+</body>
+</html>
