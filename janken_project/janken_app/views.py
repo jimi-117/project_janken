@@ -66,6 +66,19 @@ def ranking_view(request):
     return render(request, 'janken_app/ranking.html', params)
 
 @login_required
+def logout_view(request):
+    logout(request)
+    return redirect(to='/janken_app/login/')
+@login_required
+def index_view(request):
+    params = {
+        'user' : request.user
+    }
+    return render(request, 'janken_app/index.html', params)
+
+
+
+@login_required
 def user_view(request, id=0):
     other = get_list_or_404(User, id=id)
     
