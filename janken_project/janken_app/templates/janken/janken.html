@@ -1,0 +1,32 @@
+<!-- The "janken.html" file serves as a template for displaying a rock-paper-scissors game page. More specifically, 
+it is a template that displays images of the rock-paper-scissors hand signs (rock, paper, scissors) and places a button below each image. 
+This allows users to select their chosen hand in the game of rock-paper-scissors. -->
+
+{% extends 'janken/base.html' %}
+{% load static %}
+
+{% block title %}Janken{% endblock %}
+
+{% block header %}
+<h1 class="header-text">Janken (ChiHuMi)</h1>
+{% endblock %}
+
+{% block content %}
+<form action="{% url 'janken' %}" method="post">
+    {% csrf_token %}
+    <table class="table-janken">
+        <tbody>
+            <tr><td><img src="{% static 'janken/img/janken_gu.png' %}" class="image-hand"></td>
+                <td><img src="{% static 'janken/img/janken_choki.png' %}" class="image-hand"></td>
+                <td><img src="{% static 'janken/img/janken_pa.png' %}" class="image-hand"></td>
+            </tr>
+    
+            <tr>
+                <td><button type="submit" name="hand" value="stone">Rock</button></td>
+                <td><button type="submit" name="hand" value="scissors">Scissors</button></td>
+                <td><button type="submit" name="hand" value="paper">Paper</button></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+{% endblock %}
