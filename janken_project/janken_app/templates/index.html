@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shi Hu Mi !</title>
+</head>
+<body>
+    <h1>Janken game</h1>
+    <button onclick="play('rock')">Rock</button>
+    <button onclick="play('scissors')">Scissors</button>
+    <button onclick="play('paper')">Paper</button>
+    <div id="result"></div>
+    <script>
+        function play(user_hand) {
+            fetch(`/play/?hand=${user_hand}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('result').innerHTML = 
+                        `Result: ${data.result}, CPU's hand: ${data.cpu_hand}`;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
