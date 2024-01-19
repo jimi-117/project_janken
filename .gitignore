@@ -127,7 +127,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-janken
+/home/sho/workspace/project_janken/janken
 
 # Spyder project settings
 .spyderproject
